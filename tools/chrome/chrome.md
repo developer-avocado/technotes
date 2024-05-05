@@ -29,11 +29,15 @@
 
 # Search Engine
 
-| Site     | Shortcut  | Link
+1. Open Chrome
+2. Type chrome://settings/searchEngines in the address bar and pressing Enter
+3. Click [Add] in Site search and type the following item in the input box.
+
+| Name     | Shortcut  | URL
 | -------- | --------- | ---------
 | Google   | gj        | -
 | Google English   | ge | <https://www.google.com/?gl=us&hl=en&gws=cr&pws=0>
 | Google翻訳 | gt       | <https://translate.google.com/?source=osdd#auto%7Cauto%7C%25s>
 | DeepL    | dl        | <https://www.deepl.com/ja/translator#en/ja/%s>
 | Google Lens | gl | <https://lens.google.com/search?p=>
-| ブックマーク | bm | -
+| Bookmark | bm | -
