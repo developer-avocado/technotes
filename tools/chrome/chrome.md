@@ -32,7 +32,7 @@
 ## 検索エンジン
 
 1. Chromeを起動します。
-2. アドレスバーに「chrome://settings/searchEngines」と入力し、Enterを押します。
+2. アドレスバーに「chrome://settings/searchEngines」と入力し、Enterキーを押します。
 3. 以下の通り、入力ボックスに入力します。
 
 | Name     | Shortcut  | URL
