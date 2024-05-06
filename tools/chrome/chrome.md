@@ -2,15 +2,15 @@
 
 ## Build Environment
 
-1. Access the Google download page.
+1. Access Google download page.
 
    - [Google Chrome Linux](https://www.google.com/chrome/?platform=linux)
 
-2. Click the [Download Chrome].
+2. Click [Download Chrome].
 
-3. Select [64 bit .deb (For Debian/Ubuntu)] and click the [Accept and Install].
+3. Select [64 bit .deb (For Debian/Ubuntu)] and click [Accept and Install].
 
-4. Execute the downloaded file to install the chrome.
+4. Execute the downloaded file to install the Chrome.
 
    ```bash
    sudo sh -c 'ls | grep chrome | xargs -I{} dpkg -i {}'
@@ -27,10 +27,12 @@
 - [Markdown Viewer](https://chrome.google.com/webstore/detail/markdown-viewer/ckkdlimhmcjmikdlpkmbgfkaikojcbjk)
 - [Charset](https://chrome.google.com/webstore/detail/charset/oenllhgkiiljibhfagbfogdbchhdchml)
 
-# Search Engine
+# Settings
 
-1. Open Chrome
-2. Type chrome://settings/searchEngines in the address bar and pressing Enter
+## Search Engine
+
+1. Open Chrome.
+2. Type chrome://settings/searchEngines in the address bar and press Enter.
 3. Click [Add] in Site search and type the following item in the input box.
 
 | Name     | Shortcut  | URL
@@ -41,3 +43,11 @@
 | DeepL    | dl        | <https://www.deepl.com/ja/translator#en/ja/%s>
 | Google Lens | gl | <https://lens.google.com/search?p=>
 | Bookmark | bm | -
+
+## Languages
+
+1. Open Chrome.
+2. Type chrome://settings/languages in the address bar and press Enter.
+3. Click [Add languages].
+4. Select preffered language at [Preferred languages] and click [Add].
+5. Click [Three dot leader] at selected prefferd language and [Display Google Chrome in this language].
