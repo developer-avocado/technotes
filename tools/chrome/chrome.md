@@ -1,22 +1,22 @@
 # Goolge Chrome Manual
 
-## Build Environment
+## 環境構築
 
-1. Access Google download page.
+1. Googleダウンロードページにアクセスします。
 
    - [Google Chrome Linux](https://www.google.com/chrome/?platform=linux)
 
-2. Click [Download Chrome].
+2. [Download Chrome]をクリックします。
 
-3. Select [64 bit .deb (For Debian/Ubuntu)] and click [Accept and Install].
+3. [64 bit .deb (For Debian/Ubuntu)]を選択し、[Accept and Install]をクリックします。
 
-4. Execute the downloaded file to install the Chrome.
+4. ダウンロードしたファイルを実行します。
 
    ```bash
    sudo sh -c 'ls | grep chrome | xargs -I{} dpkg -i {}'
    ```
 
-## Extensions
+## 拡張機能
 
 - [Vimium](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb)
 - [Awesomescreenshot](https://chrome.google.com/webstore/detail/awesome-screenshot-and-sc/nlipoenfbbikpbjkfpfillcgkoblgpmj)
@@ -27,13 +27,13 @@
 - [Markdown Viewer](https://chrome.google.com/webstore/detail/markdown-viewer/ckkdlimhmcjmikdlpkmbgfkaikojcbjk)
 - [Charset](https://chrome.google.com/webstore/detail/charset/oenllhgkiiljibhfagbfogdbchhdchml)
 
-# Settings
+# 設定
 
-## Search Engine
+## 検索エンジン
 
-1. Open Chrome.
-2. Type chrome://settings/searchEngines in the address bar and press Enter.
-3. Click [Add] in Site search and type the following item in the input box.
+1. Chromeを起動します。
+2. アドレスバーに「chrome://settings/searchEngines」と入力し、Enterを押します。
+3. 以下の通り、入力ボックスに入力します。
 
 | Name     | Shortcut  | URL
 | -------- | --------- | ---------
@@ -44,10 +44,10 @@
 | Google Lens | gl | <https://lens.google.com/search?p=>
 | Bookmark | bm | -
 
-## Languages
+## 優先言語
 
-1. Open Chrome.
-2. Type chrome://settings/languages in the address bar and press Enter.
-3. Click [Add languages].
-4. Select preffered language at [Preferred languages] and click [Add].
-5. Click [Three dot leader] at selected prefferd language and [Display Google Chrome in this language].
+1. Chromeを起動します。
+2. アドレスバーに「chrome://settings/languages」と入力し、Enterを押します。
+3. [言語を追加]を押します。
+4. 優先言語を選択し、[追加]をクリックします。
+5. [Google Chromeをこの言語で表示]をクリックします。
