@@ -372,7 +372,7 @@ realpath ファイルパス
 
 ファイル "test.txt" の絶対パスを取得
 
-```sh
+```shell
 realpath test.txt
 ```
 
@@ -382,7 +382,7 @@ realpath test.txt
 
 シンボリックリンク "link" の絶対パスを取得
 
-```sh
+```shell
 realpath link
 ```
 
