@@ -125,8 +125,7 @@ UNIXコマンドは実行されるとプロセスとなり、3つの入出力チ
 
 ### ファイルへの書き込み操作も特権ユーザーとして実行する
 
-<span style="font-weight: bold;">ファイルへの書き込み操作も特権ユーザーとして実行する
-</span>
+<span style="font-weight: bold;">ファイルへの書き込み操作も特権ユーザーとして実行する</span>
 
 ```{.shell}
 sudo sh -c 'find ./ -type f > a.txt'
