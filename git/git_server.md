@@ -13,4 +13,3 @@
 1. /etc/gitlab/initial_root_passwordで初期パスワードを確認する。  
 
 1. ユーザ名(root)とパスワード(initila_root_password)でログインする。  
-
