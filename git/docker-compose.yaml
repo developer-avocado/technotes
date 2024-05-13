@@ -1,0 +1,19 @@
+version: '3'
+services:
+  web:
+    image: 'gitlab/gitlab-ce:16.8.4-ce.0'
+    restart: always
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://192.168.0.19:20080'
+        # Add any other gitlab.rb configuration here, each on its own line
+    ports:
+      - '20080:20080'
+      - '20443:20443'
+      - '20022:20022'
+    volumes:
+      - '/srv/gitlab/config:/etc/gitlab'
+      - '/srv/gitlab/logs:/var/log/gitlab'
+      - '/srv/gitlab//data:/var/opt/gitlab'
+    shm_size: '256m'
+
