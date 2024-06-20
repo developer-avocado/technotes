@@ -22,6 +22,12 @@ selenium
 chromedriver-autoinstaller
 ```
 
+### SSLエラー発生時のモジュールインストール
+
+```py
+pip install requests --trusted-host pypi.org --trusted-host files.pythonhosted.org
+```
+
 ### 仮想環境の作成手順
 
 1. 任意のディレクトリを作成する。  

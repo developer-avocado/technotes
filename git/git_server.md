@@ -1,4 +1,4 @@
-# Git Server
+# GitaLabサーバー
 
 ## GitLabサーバー起動手順
 

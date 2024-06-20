@@ -23,6 +23,6 @@ for branch in branch_list:
         pass
 
 # Create branches and push them
-for branch in ['a', 'b', 'c']:
-    result = subprocess.run(['git', 'checkout', '-b', f"{branch}", 'origin/main'], shell=True, stdout=PIPE, text=True)
-    result = subprocess.run(['git', 'push', '-u', 'origin', f"{branch}"], shell=True, stdout=PIPE, text=True)
+#for branch in ['a', 'b', 'c']:
+#    result = subprocess.run(['git', 'checkout', '-b', f"{branch}", 'origin/main'], shell=True, stdout=PIPE, text=True)
+#    result = subprocess.run(['git', 'push', '-u', 'origin', f"{branch}"], shell=True, stdout=PIPE, text=True)
