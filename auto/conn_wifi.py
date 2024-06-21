@@ -58,7 +58,7 @@ def connect_wifi(ssid, password):
                 f.writelines(f"{now}: {msg}\n")                    
                 exit()
 def main():
-    ssid = ""  # 接続したいWi-FiのSSID
+    ssid = "Buffalo-G-CCF0"  # 接続したいWi-FiのSSID
     password = "password"  # Wi-Fiのパスワード
 
     while True:
