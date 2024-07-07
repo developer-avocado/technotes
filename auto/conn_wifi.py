@@ -11,7 +11,7 @@ def is_connected():
     GoogleのDNSサーバーにpingを送信し、応答があるかを確認します。
     """
     try:
-        output = subprocess.check_output(["ping", "-n", "1", "192.168.13.1"], stderr=subprocess.STDOUT, universal_newlines=True)
+        output = subprocess.check_output(["ping", "-n", "1", "192.168.14.1"], stderr=subprocess.STDOUT, universal_newlines=True)
         now = datetime.now()
         print(f"{now}: {output}")
         if "タイムアウト" in output or "到達できません" in output:
