@@ -2,10 +2,11 @@ import win32com.client
 import win32gui
 import time
 import threading
+import sys
 
-mail_subject = '題目'
-mail_Body = '本文'
-mail_to ='recipient@example.com'
+mail_subject = sys.argv[1]
+mail_Body = sys.argv[2]
+mail_to = sys.argv[3]
 
 def find_mail_window():
     time.sleep(3)
