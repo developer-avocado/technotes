@@ -1,7 +1,7 @@
 Set objShell = CreateObject("Shell.Application")
 
-WScript.Echo "Set Time Zone to UTC"
-objShell.ShellExecute "cmd.exe", "/c tzutil /s ""UTC""", "", "runas", 0
+WScript.Echo "Set Time Zone to GMT Standard Time"
+objShell.ShellExecute "cmd.exe", "/c tzutil /s ""GMT Standard Time""", "", "runas", 0
 WScript.Sleep 1000
 
 WScript.Echo "Set date to 2023-10-01"
