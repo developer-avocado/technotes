@@ -2,6 +2,7 @@ import os
 
 class File: 
     
+    document_top_dir = f"F:\\work\\github\\technotes\\auto\\document"
     document_dirs = [
         '00_共通管理',
         '10_開発管理',
@@ -15,6 +16,7 @@ class File:
         '90_その他管理',
     ]
     
+    work_top_dir = f'F:\\work\\github\\technotes\\auto\\work'
     work_dirs = [
         'auto',
         'develop',
@@ -23,27 +25,27 @@ class File:
         '',
     ] 
 
-    def create_document_dirs(self, dest):
+    def create_document_dirs(self):
 
-        if not os.path.exists(dest):
-            print(f"{dest}")
-            os.mkdir(f"{dest}")
+        if not os.path.exists(self.document_top_dir):
+            print(f"{self.document_top_dir}")
+            os.mkdir(f"{self.document_top_dir}")
 
         for dir in self.document_dirs:
-            print(f"{dest}/{dir}")
-            os.mkdir(f"{dest}/{dir}")
+            print(f"{self.document_top_dir}/{dir}")
+            os.mkdir(f"{self.document_top_dir}/{dir}")
             
-    def create_work_dirs(self, dest):
+    def create_work_dirs(self):
 
-        if not os.path.exists(dest):
-            print(f"{dest}")
-            os.mkdir(f"{dest}")
+        if not os.path.exists(self.work_top_dir):
+            print(f"{self.work_top_dir}")
+            os.mkdir(f"{self.work_top_dir}")
 
         for dir in self.work_dirs:
-            print(f"{dest}/{dir}")
-            os.mkdir(f"{dest}/{dir}")
+            print(f"{self.work_top_dir}/{dir}")
+            os.mkdir(f"{self.work_top_dir}/{dir}")
 
-    def create_20_develop_dirs(self, dest):
+    def create_20_develop_dirs(self):
         dirs = [
             '00_共通管理',
             '10_進捗管理',
@@ -54,11 +56,7 @@ class File:
             '60_受領管理',
         ]
 
-        for dir in dirs:
-            print(f"{dest}/{dir}")
-            os.mkdir(f"{dest}/{dir}")    
-
 if __name__ == '__main__':
     file = File()
-    file.create_document_dirs(f'F:\\work\\github\\technotes\\auto\\document')
-    file.create_work_dirs(f'F:\\work\\github\\technotes\\auto\\work')
+    file.create_document_dirs()
+    file.create_work_dirs()
