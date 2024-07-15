@@ -17,6 +17,8 @@ class File:
     
     work_dirs = [
         'auto',
+        'develop',
+        'tech',
         'tmp',
         '',
     ] 
