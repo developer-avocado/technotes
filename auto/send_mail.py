@@ -1,5 +1,6 @@
 import win32com.client
 import win32gui
+import win32con
 import time
 import threading
 import sys
@@ -27,8 +28,28 @@ def find_mail_window():
     else:
         print("Outlook window not found.")
 
+def move_mail_window_to_top():
+    time.sleep(5)
+    
+    # すべてのウィンドウを列挙する
+    def callback(hwnd, hwnds):
+        if mail_subject.lower() in win32gui.GetWindowText(hwnd).lower():
+            hwnds.append(hwnd)
+        return True
+    
+    hwnds = []
+    win32gui.EnumWindows(callback, hwnds)
+
+    if hwnds:
+        # 最初に見つかったウィンドウを最前面に表示する
+        hwnd = hwnds[0]
+        win32gui.ShowWindow(hwnd, win32con.SW_RESTORE)  # ウィンドウを元のサイズと位置に戻す
+        win32gui.SetForegroundWindow(hwnd)              # ウィンドウを最前面に移動する
+    else:
+        print(f"タイトルに '{mail_subject}' を含むウィンドウが見つかりませんでした。")
+
 # スレッドを作成
-thread = threading.Thread(target=find_mail_window)
+thread = threading.Thread(target=move_mail_window_to_top)
 
 # スレッドを開始
 thread.start()
@@ -47,8 +68,5 @@ mail.display(True)
 #mail.Send()
 
 print("Email sent successfully.")
-
-# 少し待ってOutlookウィンドウを取得
-time.sleep(2)
 
 
