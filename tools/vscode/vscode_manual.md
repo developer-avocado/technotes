@@ -61,6 +61,17 @@
 
 ## 設定
 
+### タスク設定
+
+複数ワークスペースが存在する場合のタスク設定手順は以下の通り。
+
+1. documentワークスペースの直下に.vscodeのtasks.jsonを作成する。
+2. workワークスペースのあるフォルダに移動し、以下を実行する。
+
+  ```
+  mklink ".\.vscode\tasks.json" "F:\work\.vscode\tasks.json" 
+  ```
+
 ### 設定ファイルの変更方法(JSON)
 
 1. Vscode上で[Ctrl + Shift + P]を入力し、コマンドパレットを開く。  
