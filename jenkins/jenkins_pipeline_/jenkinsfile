@@ -1,0 +1,35 @@
+pipeline {
+    agent {
+      label 'test-pc'   
+    }
+    environment {
+        DATE = "${new Date().format('yyMMdd_HHmm')}"
+    }
+    stages {
+        stage('Set Parameters') {
+            steps {
+                script {
+                    env.TEST_DIR_PATH = "${params.TEST_BASE_DIR_PATH}_${env.DATE}"
+                    env.WRITE_DATA_DIR_DEST_PATH = "${env.TEST_DIR_PATH}/write_data"
+                    env.REPORT_DIR_PATH = "${env.TEST_DIR_PATH}/report"
+                    env.LOG_DIR_PATH = "${env.TEST_DIR_PATH}/log"
+                }
+            }
+        }
+        stage('Create Test Directory') {
+            steps {
+                bat 'python C:/work/develop/script/create_directory.py"'
+            }
+        }
+        stage('Copy Test Data') {
+            steps {
+                bat 'python C:/work/develop/script/copy_data.py'
+            }
+        }
+        stage('Write Data to USB Device') {
+            steps {
+                bat 'python C:/work/develop/script/write_data.py'
+            }
+        }
+    }
+}
