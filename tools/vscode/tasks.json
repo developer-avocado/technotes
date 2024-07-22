@@ -41,6 +41,34 @@
                 "echo": true,        // タスクの実行時にコマンドを出力する設定
                 "focus": true        // タスクの実行時にターミナルをフォーカスする設定
             }
+        },
+        {
+            "label": "Switch Work",
+            "type": "shell",
+            "command": "F:\\document\\work.code-workspace.lnk",
+            "group": {
+                "kind": "none",
+            },
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "never",  // タスクの実行時に出力を表示する設定
+                "echo": false,        // タスクの実行時にコマンドを出力する設定
+                "focus": false        // タスクの実行時にターミナルをフォーカスする設定
+            }
+        },
+        {
+            "label": "Switch Document",
+            "type": "shell",
+            "command": "F:\\work\\document.code-workspace.lnk",
+            "group": {
+                "kind": "none",
+            },
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "never",  // タスクの実行時に出力を表示する設定
+                "echo": false,        // タスクの実行時にコマンドを出力する設定
+                "focus": false        // タスクの実行時にターミナルをフォーカスする設定
+            }
         }
 	]
 }
