@@ -1,0 +1,7 @@
+state: run
+tempalte_path: ./
+window_title: Chrome
+new_x: 100
+new_y: 100
+new_width: 800
+new_height: 600

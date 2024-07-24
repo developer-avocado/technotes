@@ -1,21 +1,19 @@
-version: '3'
+version: '3.6'
 services:
   web:
-    image: 'gitlab/gitlab-ce:16.8.4-ce.0'
+    image: 'gitlab/gitlab-ce:latest'
     restart: always
+    hostname: 'localhost'
     environment:
       GITLAB_OMNIBUS_CONFIG: |
-        external_url 'http://localhost:20080'
+        external_url 'http://localhost'
         # Add any other gitlab.rb configuration here, each on its own line
     ports:
-      - '20080:20080'
-      - '20443:20443'
-      - '20022:20022'
+      - '80:80'
+      - '443:443'
+      - '22:22'
     volumes:
-      - '/srv/gitlab/config:/etc/gitlab'
-      - '/srv/gitlab/logs:/var/log/gitlab'
-      - '/srv/gitlab//data:/var/opt/gitlab'
+      - '/srv/config:/etc/gitlab'
+      - '/srv/logs:/var/log/gitlab'
+      - '/srv/data:/var/opt/gitlab'
     shm_size: '256m'
-    networks:
-      - jenkins
-
