@@ -4,7 +4,7 @@ from tkinter import simpledialog
 import yaml
 import threading
 import keyboard
-q
+
 # クリック位置と名前のペアを記録する辞書
 click_positions = {}
 
