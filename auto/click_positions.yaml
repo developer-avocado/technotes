@@ -1,15 +1,3 @@
-test1: !!python/tuple
-- 838
-- 424
-test2: !!python/tuple
-- 1014
-- 289
-test3: !!python/tuple
-- 1387
-- 213
-test4: !!python/tuple
-- 759
-- 551
-test5: !!python/tuple
-- 1184
-- 207
+テスト:
+- 1152
+- 816

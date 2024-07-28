@@ -5,7 +5,14 @@ import yaml
 import threading
 import keyboard
 
-# クリック位置と名前のペアを記録する辞書
+def tuple_representer(dumper, data):
+    """タプル用のカスタムrepresenter"""
+    return dumper.represent_sequence('tag:yaml.org,2002:seq', data)
+
+# カスタムrepresenterを設定
+yaml.add_representer(tuple, tuple_representer)
+
+# クリック位置と名前のペアを記録する辞書q
 click_positions = {}
 
 def get_name(x, y):
@@ -28,8 +35,11 @@ def record_position(x, y):
         print(f"Position ({x}, {y}) recorded with name '{name}'")
 
 def save_to_yaml(data, filename):
-    with open(filename, 'w') as file:
-        yaml.dump(data, file, default_flow_style=False)
+    with open(filename, 'r', encoding='utf_8') as file:
+        existing_data = yaml.safe_load(file) or {}
+    existing_data.update(data)
+    with open(filename, 'w', encoding='utf_8') as file2:
+        yaml.dump(existing_data, file2, allow_unicode=True, default_flow_style=False)
     print(f"Data saved to {filename}")
 
 # マウスリスナーの開始
