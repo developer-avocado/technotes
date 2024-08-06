@@ -57,4 +57,55 @@ Sub SearchTextInShapesAllSheets()
     End If
 End Sub
 
+Sub CopyRangeBetweenWorkbooks()
+    Dim sourceWB As Workbook
+    Dim destinationWB As Workbook
+    Dim sourceSheet As Worksheet
+    Dim destinationSheet As Worksheet
+    Dim copyRange As Range
+    Dim pasteRange As Range
+    Dim sourcePath As String
+    Dim destinationPath As String
+    Dim rangeAddress As String
+    Dim pasteAddress As String
+    
+    ' コピー元とコピー先のファイルパスを設定
+    sourcePath = "F:\work\tmp\test.xlsm"  ' コピー元のファイルパスを指定
+    destinationPath = "F:\work\tmp\test_target.xlsm"  ' コピー先のファイルパスを指定
+    
+    ' コピー元とコピー先のセル範囲のアドレスを設定
+    rangeAddress = "A1:C10"  ' コピーするセル範囲を指定
+    pasteAddress = "A1"  ' コピー先のセルの開始位置を指定
+    
+    ' コピー元のワークブックを開く
+    Set sourceWB = Workbooks.Open(sourcePath)
+    
+    ' コピー元のシートを設定（ここでは最初のシートを指定）
+    Set sourceSheet = sourceWB.Sheets(1)
+    
+    ' コピー先のワークブックを開く
+    Set destinationWB = Workbooks.Open(destinationPath)
+    
+    ' コピー先のシートを設定（ここでは最初のシートを指定）
+    Set destinationSheet = destinationWB.Sheets(1)
+    
+    ' コピーする範囲を設定
+    Set copyRange = sourceSheet.Range(rangeAddress)
+    
+    ' ペーストする範囲を設定
+    Set pasteRange = destinationSheet.Range(pasteAddress)
+    
+    ' コピー＆ペースト
+    copyRange.Copy
+    pasteRange.PasteSpecial Paste:=xlPasteAll
+    
+    ' ワークブックを保存して閉じる
+    'destinationWB.Save
+    'destinationWB.Close
+    'sourceWB.Close False
+    
+    ' メッセージボックスで完了通知
+    MsgBox "コピーが完了しました。", vbInformation
+End Sub
+
 
