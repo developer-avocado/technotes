@@ -4,6 +4,7 @@ Sub SearchTextInShapesAllSheets()
     Dim searchText As String
     Dim foundCount As Integer
     Dim sheetFoundCount As Integer
+    Dim firstFoundSheet As Boolean
     
     ' 検索する文字列をユーザーに入力してもらう
     searchText = InputBox("検索する文字列を入力してください：")
@@ -15,6 +16,7 @@ Sub SearchTextInShapesAllSheets()
     End If
     
     foundCount = 0
+    firstFoundSheet = True
     
     ' ワークブック内のすべてのシートをループ
     For Each ws In ActiveWorkbook.Worksheets
@@ -26,6 +28,12 @@ Sub SearchTextInShapesAllSheets()
             If shp.TextFrame2.HasText Then
                 ' 検索文字列が図形のテキストに含まれている場合
                 If InStr(1, shp.TextFrame2.TextRange.Text, searchText, vbTextCompare) > 0 Then
+                    ' シートが初めて見つかった場合、または既に見つかったシートがある場合
+                    If firstFoundSheet Then
+                        ws.Activate
+                        firstFoundSheet = False
+                    End If
+                    
                     ' 図形を選択して強調表示
                     shp.Select Replace:=False
                     foundCount = foundCount + 1
